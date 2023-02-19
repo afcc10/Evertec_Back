@@ -44,15 +44,15 @@ namespace Business.Implement
             return response;
         }
 
-        public async Task<Response<bool>> UpdatePersona(PersonaDto student)
+        public async Task<Response<bool>> UpdatePersona(PersonaDto persona)
         {
-            var result = await _personaRepository.UpdatePersona(student);
+            var result = await _personaRepository.UpdatePersona(persona);
             return result;
         }
 
-        public async Task<Response<bool>> CreatePersona(PersonaDto student)
+        public async Task<Response<bool>> CreatePersona(PersonaDto persona)
         {
-            var result = await _personaRepository.CreatePersona(student);
+            var result = await _personaRepository.CreatePersona(persona);
             return result;
         }
 

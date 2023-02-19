@@ -32,7 +32,7 @@ namespace Crud_sqlLite.Controllers
         /// <summary>
         /// Obtener estudiantes
         /// </summary>
-        /// <returns>Response model StudentDto</returns>
+        /// <returns>Response model personaDto</returns>
         /// <author>Andres Cabezas</author>
         [HttpGet]
         [Route("GetAll")]
@@ -63,12 +63,12 @@ namespace Crud_sqlLite.Controllers
         [HttpPost]
         [Route("Create")]
         [ProducesResponseType(typeof(Response<bool>), StatusCodes.Status200OK)]
-        public async Task<Response<bool>> Post(PersonaDto student)
+        public async Task<Response<bool>> Post(PersonaDto persona)
         {
             Response<bool> response;
             try
             {
-                response = await Service.CreatePersona(student);
+                response = await Service.CreatePersona(persona);
                 return response;
             }
             catch (Exception ex)
@@ -89,12 +89,12 @@ namespace Crud_sqlLite.Controllers
         [HttpPut]
         [Route("Update")]
         [ProducesResponseType(typeof(Response<bool>), StatusCodes.Status200OK)]
-        public async Task<Response<bool>> Update(PersonaDto student)
+        public async Task<Response<bool>> Update(PersonaDto persona)
         {
             Response<bool> response;
             try
             {
-                response = await Service.UpdatePersona(student);
+                response = await Service.UpdatePersona(persona);
                 return response;
             }
             catch (Exception ex)
@@ -110,7 +110,7 @@ namespace Crud_sqlLite.Controllers
         /// <summary>
         /// obtener estudiantes by id
         /// </summary>
-        /// <returns>Response studentdto</returns>
+        /// <returns>Response personadto</returns>
         /// <author>Andres Cabezas</author>
         [HttpGet]
         [Route("GetById")]

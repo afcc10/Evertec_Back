@@ -29,7 +29,7 @@ namespace DependencyInjection
 
         public static IServiceCollection AddDbContext(IServiceCollection services, string DefaultConnection)
         {
-            services.AddDbContext<DbCrudContext>(options => options.UseSqlServer(DefaultConnection));
+            services.AddDbContext<DbCrudContext>(options => options.UseSqlServer(DefaultConnection, b => b.MigrationsAssembly("Evertec")));
             return services;
         }
     }
