@@ -4,7 +4,6 @@ using DataAccess.Core.Contract;
 using DataAccess.Core.Implements;
 using DataAccess.Models;
 using DataAccess.Models.Mapper;
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -30,11 +29,7 @@ namespace DependencyInjection
 
         public static IServiceCollection AddDbContext(IServiceCollection services, string DefaultConnection)
         {
-            var connection = new SqliteConnection(DefaultConnection);
-            connection.Open();
-            connection.EnableExtensions(true);
-            services.AddDbContext<DbCrudContext>(options => options.UseSqlite(DefaultConnection));           
-
+            services.AddDbContext<DbCrudContext>(options => options.UseSqlServer(DefaultConnection));
             return services;
         }
     }
