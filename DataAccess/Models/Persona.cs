@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models
 {
-    [Table("Student")]
+    [Table("Persona")]
     public class Persona
     {
         [Key]

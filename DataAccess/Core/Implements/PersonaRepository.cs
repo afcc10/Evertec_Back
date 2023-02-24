@@ -66,7 +66,7 @@ namespace DataAccess.Core.Implements
             Response<bool> response = new();
             try
             {
-                var persona = context.Persona.Where(x => x.Id == _persona.Id).FirstOrDefault();
+                var persona = context.Persona.Where(x => x.Id == _persona.Id).AsNoTracking().FirstOrDefault();
 
                 persona = _mapper.Map<Persona>(_persona);
 
